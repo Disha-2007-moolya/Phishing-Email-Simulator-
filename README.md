@@ -51,6 +51,20 @@ python app.py
 
 http://127.0.0.1:5000/
 
+## Screenshots
+
+### Home Page
+
+![Home](Screenshots/home.png)
+
+### Correct Answer
+
+![Correct](Screenshots/correct-answer.png)
+
+### Final Result
+
+![Result](Screenshots/result-page.png)
+
 ## Learning Outcomes
 
 - Flask Routing
