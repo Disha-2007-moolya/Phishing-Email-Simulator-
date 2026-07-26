@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Finished</title>
+    <link rel="stylesheet"  href="{{url_for('static',filename='style.css') }}">
+
+
+</head>
+<body>
+<div class="container">
+    <div class="result-card">
+    
+    <h1>Quiz Completed</h1>
+    <h2>Your score</h2>
+    <h1>{{score}}/{{total}}</h1> 
+    <h2>{{percentage }}%</h2>
+    <p>{{message}}</p>
+    <a href="/restart" class="restart-btn">Play Again</a>
+    </div>
+</div>
+</body>
+</html>

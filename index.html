@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Phishing Email Simulator</title>
+        <link rel="stylesheet" href="{{url_for("static", filename="style.css")}}">
+    </head>
+    <body>
+        <h3 class="score">Score:{{score}}</h3>
+        <div class="container">
+        <h1>Phishing Email Simulator</h1>
+        <h3 class=""progess>
+            Email {{question_no}} of {{total_questions}}
+        </h3>
+        </h3>
+        <div class="email-card">
+            <img src="{{ url_for('static', filename='logos/'+ email['logo']) }}" class="company-logo">
+            <h3>{{email["from"]}}</h3>
+       
+    
+    
+        <p><strong>Subject:</strong> {{email["subject"]}}</p>
+        <hr>
+        <p>Hello Customer,</p>
+    
+        <p>
+            {{email["message"]}}
+
+
+        </p>
+        <a href="#" class="verify-btn">Verify Account</a>
+        <p class="footer">
+            Thank you,<br>
+            {{email ["company"]}}
+        </p>
+        </div>
+       
+
+        
+        </div>
+        <form method="POST">
+            <input type="radio" name="answer" value="legitimate">
+            Legitimate
+            <br><br>
+            <input type="radio" name="answer" value="phishing">
+            Phishing
+            <br><br>
+            <button type="submit">Submit</button>
+            {% if result %}
+                <div class="{{result_class}}">
+                    {{result}}
+                </div>
+            {% endif %}
+            {% if result %}
+            <a href="/next" class="next-btn">Next Email</a>
+            {% endif %}
+            {% if explanation %}
+            <div class="explanation">
+                <strong>Why?</strong><br>
+                {{explanation}}
+            </div>
+            {% endif %}
+        </form>
+        </div>
+    </body>
+</html>
